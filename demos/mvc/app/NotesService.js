@@ -2,14 +2,15 @@
  * Created by Volodymyr on 3/18/2015.
  */
 
-import {Dictionary} from 'ria.core.Dictionary';
-import {Array} from 'ria.core.Array';
-import {Promise} from 'ria.core.Promise';
-import {JsonTask} from 'ria.core.web.JsonTask';
-import {SJX} from 'ria.core.SJX';
+import {Dictionary} from 'ef.core.Dictionary';
+import {Array} from 'ef.core.Array';
+import {Promise} from 'ef.core.Promise';
+import {JsonTask} from 'ef.core.web.JsonTask';
+import {SJX} from 'ef.core.SJX';
 
 import {Note} from 'app.Note';
 
+/** @class app.NotesService */
 export default class NotesService {
 
     deserialize_(json: String, klass) {

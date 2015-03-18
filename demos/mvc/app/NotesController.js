@@ -3,7 +3,7 @@
  */
 "use strict";
 
-import Controller from 'ria.mvc.Controller';
+import Controller from 'ef.mvc.Controller';
 import NotesService from 'app.NotesService';
 
 class OtherModel {
@@ -17,7 +17,8 @@ class OtherModel {
 }
 
 // all classes with Controller are controllers
-export class NotesController extends Controller {
+//noinspection JSUnusedGlobalSymbols
+export default class NotesController extends Controller {
 
     // auto inject services
     notesService: NotesService;
@@ -29,6 +30,7 @@ export class NotesController extends Controller {
     }
 
     // all public method with Action are actions :)
+    //noinspection JSUnusedGlobalSymbols
     indexAction() {
         var result = this.notesService.getNotes()
             .catchError(this.handleError_, this)

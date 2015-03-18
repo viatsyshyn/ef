@@ -3,11 +3,12 @@
  */
 "use strict";
 
-import {SJX} from 'ria.core.SJX';
+import {SJX} from 'ef.core.SJX';
 
 import {NoteId} from 'app.NoteID';
 import {UserId} from 'app.UserID';
 
+/** @class app.Note */
 export class Note {
     id: NoteId;
     title: string;
