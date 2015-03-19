@@ -3,9 +3,9 @@
  */
 "use strict";
 
-import DefaultApplication from 'ef.mvc.DefaultApplication';
+import DefaultApplication from '../../../src/framework/mvc/DefaultApplication';
 
-import NotesController from 'app.NotesController';
+import NotesController from 'controllers/NotesController';
 
 export class DemoApp extends DefaultApplication {
 }

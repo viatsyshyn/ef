@@ -3,8 +3,9 @@
  */
 "use strict";
 
-import Controller from 'ef.mvc.Controller';
-import NotesService from 'app.NotesService';
+import Controller, {ActionResult} from '../../../../src/framework/mvc/Controller';
+import NotesService from '../services/NotesService';
+import NotesActivity from '../activities/NotesActivity';
 
 class OtherModel {
     model: Array<Note>;
@@ -31,11 +32,11 @@ export default class NotesController extends Controller {
 
     // all public method with Action are actions :)
     //noinspection JSUnusedGlobalSymbols
-    indexAction() {
+    indexAction(): ActionResult {
         var result = this.notesService.getNotes()
             .catchError(this.handleError_, this)
             .transform(model => OtherModel.$fromModel(model, 5));
 
-        return this.PushView(Notes, result);
+        return this.PushView(NotesActivity, result);
     }
 }

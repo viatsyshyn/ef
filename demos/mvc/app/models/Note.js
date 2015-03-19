@@ -3,10 +3,13 @@
  */
 "use strict";
 
-import {SJX} from 'ef.core.SJX';
+import SJX from '../../../../src/framework/core/SJX';
 
-import {NoteId} from 'app.NoteID';
-import {UserId} from 'app.UserID';
+import NoteId from 'id/NoteID';
+import UserId from 'id/UserID';
+
+export const NoteId = NoteId;
+export const UserId = UserId;
 
 /** @class app.Note */
 export class Note {

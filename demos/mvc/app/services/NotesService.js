@@ -2,15 +2,13 @@
  * Created by Volodymyr on 3/18/2015.
  */
 
-import {Dictionary} from 'ef.core.Dictionary';
-import {Array} from 'ef.core.Array';
-import {Promise} from 'ef.core.Promise';
-import {JsonTask} from 'ef.core.web.JsonTask';
-import {SJX} from 'ef.core.SJX';
+import Dictionary from '../../../../src/framework/core/Dictionary';
+import Promise from '../../../../src/framework/core/Promise';
+import JsonTask from '../../../../src/framework/core/web/JsonTask';
+import SJX from '../../../../src/framework/core/SJX';
 
-import {Note} from 'app.Note';
+import NotesPage from '../models/NotesPage';
 
-/** @class app.NotesService */
 export default class NotesService {
 
     deserialize_(json: String, klass) {
@@ -23,7 +21,7 @@ export default class NotesService {
                 .then((json) => this.deserialize_(json, klass));
     }
 
-    getNotes(): Promise {
-        return this.fetch_('data/notes.json', Array<Note>);
+    getNotes(): Promise<NotesPage> {
+        return this.fetch_('data/notes.json', NotesPage);
     }
 }
