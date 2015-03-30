@@ -21,7 +21,9 @@ export default class NotesService {
                 .then((json) => this.deserialize_(json, klass));
     }
 
-    getNotes(): Promise<NotesPage> {
-        return this.fetch_('data/notes.json', NotesPage);
+    getNotesFor(userName: String): Promise<NotesPage> {
+        return this.fetch_('data/notes.json', NotesPage, {
+            "userName": userName
+        });
     }
 }

@@ -3,9 +3,11 @@
  */
 "use strict";
 
-import DefaultApplication from '../../../src/framework/mvc/DefaultApplication';
+import DefaultApplication, {Use} from '../../../src/framework/mvc/DefaultApplication';
 
 import NotesController from 'controllers/NotesController';
 
+@Use(NotesController)
 export class DemoApp extends DefaultApplication {
+
 }
